@@ -5,7 +5,7 @@ import 'package:new_m/pages/login_email.dart';
 import 'package:new_m/pages/splash.dart';
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/',
+    initialRoute: '/splash',
     routes: {
       '/': (context) => WelcomePage(),
       '/sign_in_option': (context) => MyHomePage(),
