@@ -62,7 +62,7 @@ class LoginEmail extends StatelessWidget {
                       obscureText: false,
                       hintText: 'Enter your email',
                       prefixIcon: const Icon(Icons.email,
-                      color: Color.fromRGBO(240, 241, 240, 0.612)),
+                      color: Color.fromRGBO(149, 228, 168, 100)),
                     ),
                     SizedBox(
                       height: 17 * hs,
