@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                          
                                         // ),
                                         child:  TextButton(
-                                                onPressed: () => Navigator.pushNamed(context, '/'),
+                                                onPressed: () => Navigator.pushNamed(context, '/register_email'),
                                                 child: const Text('Register',
                                                 style: TextStyle(
                                                    color: Color(0xFF2E2E2E),

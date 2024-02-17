@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_m/componests/my_text_field.dart';
+import 'package:new_m/pages/login_phone_code.dart';
 
 
 class LoginPhone extends StatelessWidget {
@@ -43,7 +44,7 @@ class LoginPhone extends StatelessWidget {
                         style: TextStyle(
                           color: Color(0xFF2E2E2E),
                           fontWeight:
-                              FontWeight.w900, // FontWeight.bold is also valid
+                              FontWeight.bold, // FontWeight.bold is also valid
                           fontSize: 50,
                         )),
                     SizedBox(height: 11 * hs),
@@ -52,8 +53,8 @@ class LoginPhone extends StatelessWidget {
                       style: TextStyle(
                         color: Color(0xFF2E2E2E),
                         fontSize: 18,
-                        fontWeight: FontWeight
-                            .w500, // You can adjust the fontWeight as needed
+                        fontWeight: FontWeight.bold,
+                           // You can adjust the fontWeight as needed
                       ),
                     ),
                     SizedBox(height: 67 * hs),
@@ -69,7 +70,7 @@ class LoginPhone extends StatelessWidget {
                     ),
                    
                     SizedBox(height: hs*20,),
-                    CustomButton(buttonText:'Get code via SMS'),
+                    CustomButton1(buttonText:'Get code via SMS'),
                     SizedBox(height:hs*320),
         
                     Align(
@@ -133,7 +134,7 @@ class LoginPhone extends StatelessWidget {
                       
                               // ),
                               child: TextButton(
-                                onPressed: () => Navigator.pushNamed(context, '/'),
+                                onPressed: () => Navigator.pushNamed(context, '/register_email'),
                                 child: const Text(
                                   'Register',
                                   style: TextStyle(
@@ -162,6 +163,61 @@ class LoginPhone extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton1 extends StatelessWidget {
+  final String buttonText; // Argument for dynamic text
+
+  CustomButton1({required this.buttonText});
+
+  @override
+  Widget build(BuildContext context) {
+    double figmaScreenWidth = 428.0;
+  double figmaScreenHeight = 926.0;
+  double screenWidth = MediaQuery.of(context).size.width;
+  double screenHeight = MediaQuery.of(context).size.height;
+  double ws = screenWidth / figmaScreenWidth;
+  double hs = screenHeight / figmaScreenHeight;
+  print('Scaled Screen Width: $screenWidth * $ws');
+  print('Scaled Screen Height: $screenHeight * $hs');
+    return GestureDetector(
+      onTap: () {
+        
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>LoginPhoneCode()), // Replace with your desired route
+        );
+      },
+      child: Container(
+        width: 348*hs,
+        height: 51*ws,
+        decoration: BoxDecoration(
+          //color: Color.fromARGB(0, 244, 57, 100),
+          color:Color.fromARGB(255, 0, 244, 57),
+          //color: Color(0xFF00F439),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          
+              SizedBox(width: 15),
+              Text(
+                buttonText,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'ReadexPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ],
           ),
         ),
       ),
