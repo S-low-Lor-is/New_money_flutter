@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:new_m/pages/login_email.dart';
-import 'package:new_m/pages/welcome.dart';
+import 'package:new_m/pages/login_phone.dart';
+
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -26,7 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
   print('Scaled Screen Height: $screenHeight * $hs');
 
     return Scaffold(
-      
     
       body:  SingleChildScrollView(
         child: Container(
@@ -75,9 +76,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       SizedBox(height: 67*hs),
-                      CustomButton(buttonText: "Sign in with email",additionalWidget: EnvelopeIcon(),), 
+                      CustomButton(buttonText: "Sign in with email",additionalWidget: EnvelopeIcon(),destinationRoute: LoginEmail(),), 
                       SizedBox(height: 17*hs,),
-                      CustomButton(buttonText: "Sign in with SMS",additionalWidget: CallIcon(),), 
+                      CustomButton(buttonText: "Sign in with SMS",additionalWidget: CallIcon(),destinationRoute: LoginPhone(),), 
                       SizedBox(height: 310*hs,),
                          Container(
                               // height: 20*hs,
@@ -177,8 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
 class CustomButton extends StatelessWidget {
   final String buttonText; // Argument for dynamic text
   final Widget additionalWidget;
+  final Widget destinationRoute;
 
-  CustomButton({required this.buttonText, required this.additionalWidget});
+  CustomButton({required this.buttonText, required this.additionalWidget,required this.destinationRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +189,7 @@ class CustomButton extends StatelessWidget {
         // Navigate to another route when the button is pressed
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) =>LoginEmail()), // Replace with your desired route
+          MaterialPageRoute(builder: (context) =>destinationRoute), // Replace with your desired route
         );
       },
       child: Container(

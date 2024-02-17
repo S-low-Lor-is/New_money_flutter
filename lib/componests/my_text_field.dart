@@ -1,64 +1,8 @@
-// import 'package:flutter/material.dart';
-
-// class MyTextField extends StatelessWidget {
-//   final controller;
-//   final String hintText;
-//   final bool obscureText;
-//   final String customIconPath;
-  
-
-//   const MyTextField({
-//     super.key,
-//     required this.controller,
-//     required this.hintText,
-//     required this.obscureText,
-//     required this.customIconPath,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 51,
-//       width: 348,
-//       child: TextField(
-        
-//         controller: controller,
-//         obscureText: obscureText,
-//         decoration: InputDecoration(
-//             prefixIcon: customIconPath.isNotEmpty
-//               ? Container(
-//                   width: 20,
-//                   height: 30, 
-//                   decoration: BoxDecoration(
-//                     // image: DecorationImage(
-//                     // image: AssetImage(customIconPath),
-//                     //  ),
-//                     border: Border.all(
-//                       color: Colors.black,
-//                       width: 2
-//                     )
-//                   ),
-//                 ): null,
-            
-//             enabledBorder: const OutlineInputBorder(
-//               borderSide: BorderSide(color: Color(0xDBDBDB)),
-//             ),
-//             focusedBorder: OutlineInputBorder(
-//               borderSide: BorderSide(color: Colors.grey.shade400),
-//             ),
-//             fillColor: Colors.grey.shade200,
-//             filled: true,
-//             hintText: hintText,
-//             hintStyle: TextStyle(color: Colors.grey[500])),
-//       ),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
-import 'package:new_m/pages/login_email.dart';
-
 
 class MyTextField extends StatelessWidget {
+
+  
   final controller;
   final String hintText;
   final bool obscureText;
@@ -74,9 +18,18 @@ class MyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double figmaScreenWidth = 428.0;
+  double figmaScreenHeight = 926.0;
+  double screenWidth = MediaQuery.of(context).size.width;
+  double screenHeight = MediaQuery.of(context).size.height;
+  double ws = screenWidth / figmaScreenWidth;
+  double hs = screenHeight / figmaScreenHeight;
+  print('Scaled Screen Width: $screenWidth * $ws');
+  print('Scaled Screen Height: $screenHeight * $hs');
     return Container(
-      height: 51,
-      width: 348,
+      height: 51*hs,
+      width: 348*ws,
       child: TextField(
 
         controller: controller,
@@ -110,6 +63,14 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double figmaScreenWidth = 428.0;
+  double figmaScreenHeight = 926.0;
+  double screenWidth = MediaQuery.of(context).size.width;
+  double screenHeight = MediaQuery.of(context).size.height;
+  double ws = screenWidth / figmaScreenWidth;
+  double hs = screenHeight / figmaScreenHeight;
+  print('Scaled Screen Width: $screenWidth * $ws');
+  print('Scaled Screen Height: $screenHeight * $hs');
     return GestureDetector(
       onTap: () {
         // Navigate to another route when the button is pressed
@@ -119,8 +80,8 @@ class CustomButton extends StatelessWidget {
         // );
       },
       child: Container(
-        width: 348,
-        height: 51,
+        width: 348*hs,
+        height: 51*ws,
         decoration: BoxDecoration(
           //color: Color.fromARGB(0, 244, 57, 100),
           color:Color.fromARGB(255, 0, 244, 57),

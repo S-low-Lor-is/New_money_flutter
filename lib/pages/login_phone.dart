@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:new_m/componests/my_text_field.dart';
 
-class LoginEmail extends StatelessWidget {
-  LoginEmail({super.key});
-  final emailcontroller = TextEditingController();
-  final passwordcontroller = TextEditingController();
+
+class LoginPhone extends StatelessWidget {
+  LoginPhone({super.key});
+  final phonecontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double figmaScreenWidth = 428.0;
@@ -13,7 +14,6 @@ class LoginEmail extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double ws = screenWidth / figmaScreenWidth;
     double hs = screenHeight / figmaScreenHeight;
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -39,7 +39,7 @@ class LoginEmail extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   
                   children: <Widget>[
-                    const Text('Sign in',
+                    const Text('Login',
                         style: TextStyle(
                           color: Color(0xFF2E2E2E),
                           fontWeight:
@@ -58,52 +58,19 @@ class LoginEmail extends StatelessWidget {
                     ),
                     SizedBox(height: 67 * hs),
                     MyTextField(
-                      controller: emailcontroller,
+                      controller: phonecontroller,
                       obscureText: false,
-                      hintText: 'Enter your email',
-                      prefixIcon: const Icon(Icons.email,
-                      color: Color.fromRGBO(240, 241, 240, 0.612)),
+                      hintText: 'Enter your phone number',
+                      prefixIcon: Icon(Icons.phone,
+                          color: Color.fromRGBO(149, 228, 168, 100)),
                     ),
                     SizedBox(
                       height: 17 * hs,
                     ),
-                    MyTextField(
-                      controller: passwordcontroller,
-                      obscureText: true,
-                      hintText: 'Enter your password',
-                      prefixIcon: const Icon(Icons.lock,
-                          color: Color.fromRGBO(149, 228, 168, 100)),
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight, 
-                      
-                      child: TextButton(
-                        onPressed: () => Navigator.pushNamed(context, '/'),
-                        style: ButtonStyle(
-                        
-                          alignment:
-                              Alignment.topLeft, // <-- had to set alignment
-                          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.zero, // <-- had to set padding to zero
-                          
-                          ),
-                        ),
-                        
-                      
-                        child:  const Text(
-                          'Forgot password?',
-                          style: TextStyle(
-                            color: Color(0xFF2E2E2E),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            fontFamily: 'ReadexPro',
-                          ),
-                        ),
-                      ),
-                    ),
+                   
                     SizedBox(height: hs*20,),
-                    CustomButton(buttonText:'Log in'),
-                    SizedBox(height:hs*210),
+                    CustomButton(buttonText:'Get code via SMS'),
+                    SizedBox(height:hs*320),
         
                     Align(
                       alignment: Alignment.bottomCenter, 
@@ -130,7 +97,7 @@ class LoginEmail extends StatelessWidget {
                               // color: Colors.amber,
                               //  ),
                       
-                              child:const  Text('First time here?',
+                              child: Text('First time here?',
                                   style: TextStyle(
                                     color: Color(0xFF2E2E2E),
                                     fontWeight: FontWeight
@@ -139,7 +106,7 @@ class LoginEmail extends StatelessWidget {
                                     fontFamily: 'ReadexPro',
                                   )),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 4,
                             ),
                             Container(
@@ -167,15 +134,6 @@ class LoginEmail extends StatelessWidget {
                               // ),
                               child: TextButton(
                                 onPressed: () => Navigator.pushNamed(context, '/'),
-                                style: ButtonStyle(
-                                  alignment: Alignment
-                                      .centerLeft, // <-- had to set alignment
-                                  padding:
-                                      MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets
-                                        .zero, // <-- had to set padding to zero
-                                  ),
-                                ),
                                 child: const Text(
                                   'Register',
                                   style: TextStyle(
@@ -183,6 +141,15 @@ class LoginEmail extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
                                     fontFamily: 'ReadexPro',
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                  alignment: Alignment
+                                      .centerLeft, // <-- had to set alignment
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                    EdgeInsets
+                                        .zero, // <-- had to set padding to zero
                                   ),
                                 ),
                               ),
@@ -201,3 +168,4 @@ class LoginEmail extends StatelessWidget {
     );
   }
 }
+
