@@ -237,8 +237,8 @@ class CallIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       'assets/call.png',
-       width: 17, // Adjust the width as needed
-       height: 17, // Adjust the height as needed
+       width: 17, 
+       height: 17,
     );
   }
 }

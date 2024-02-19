@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_m/componests/my_text_field.dart';
+import 'package:new_m/pages/success.dart';
 
 class RegisterEmail extends StatelessWidget {
   RegisterEmail({super.key});
@@ -61,7 +62,7 @@ class RegisterEmail extends StatelessWidget {
                 ),
              
                 SizedBox(height: hs*20,),
-                CustomButton(buttonText:'Next'),
+                CustomButtonlink(buttonText:'Next', path: Success(),),
                 SizedBox(height:hs*210),
               
                 Align(

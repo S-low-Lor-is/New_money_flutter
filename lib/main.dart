@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:new_m/pages/home.dart';
+import 'package:new_m/pages/notification.dart';
+import 'package:new_m/pages/profile_created.dart';
+import 'package:new_m/pages/success.dart';
+import 'package:new_m/pages/create_profile.dart';
+import 'package:new_m/pages/test_ui.dart';
 import 'package:new_m/pages/welcome.dart';
 import 'package:new_m/pages/login_email.dart';
 import 'package:new_m/pages/splash.dart';
@@ -12,7 +17,7 @@ import 'package:new_m/pages/login_phone_code.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/splash',
+    initialRoute: '/notification',
     routes: {
       '/': (context) => WelcomePage(),
       '/sign_in_option': (context) => MyHomePage(),
@@ -22,6 +27,11 @@ void main() {
       '/login_phone':(context) => LoginPhone(),
       '/reset_password':(context) => ResetPassword(),
       '/login_phone_code':(context) => LoginPhoneCode(),
+      '/success':(context) => Success(),
+      '/create_profile':(context) => ProfilePage(),
+      '/profile_created':(context) => ProfileCreated(),
+      '/notification':(context) => Notifi(),
+      '/test':(context) => TestUi(),
     },
   ));
 }

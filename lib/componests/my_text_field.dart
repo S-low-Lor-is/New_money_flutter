@@ -110,3 +110,59 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class CustomButtonlink extends StatelessWidget {
+  final String buttonText; // Argument for dynamic text
+  final Widget path;
+
+  CustomButtonlink({required this.buttonText, required this.path});
+
+  @override
+  Widget build(BuildContext context) {
+  double figmaScreenWidth = 428.0;
+  double figmaScreenHeight = 926.0;
+  double screenWidth = MediaQuery.of(context).size.width;
+  double screenHeight = MediaQuery.of(context).size.height;
+  double ws = screenWidth / figmaScreenWidth;
+  double hs = screenHeight / figmaScreenHeight;
+  print('Scaled Screen Width: $screenWidth * $ws');
+  print('Scaled Screen Height: $screenHeight * $hs');
+    return GestureDetector(
+      onTap: () {
+        
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>path), // Replace with your desired route
+        );
+      },
+      child: Container(
+        width: 348*ws,
+        height: 51*hs,
+        decoration: BoxDecoration(
+          //color: Color.fromARGB(0, 244, 57, 100),
+          color:Color.fromARGB(255, 0, 244, 57),
+          //color: Color(0xFF00F439),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          
+              SizedBox(width: 15),
+              Text(
+                buttonText,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'ReadexPro',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
