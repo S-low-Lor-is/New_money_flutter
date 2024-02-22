@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:new_m/pages/gpt.dart';
 import 'package:new_m/pages/home.dart';
 import 'package:new_m/pages/index.dart';
 import 'package:new_m/pages/notification.dart';
@@ -38,7 +39,8 @@ void main() {
       '/profile_created':(context) => ProfileCreated(),
       '/notification':(context) => Notifi(),
       '/welcome':(context) => Welcome(),
-      '/test':(context) => Balance(),
+      '/index':(context) => Balance(),
+      '/test':(context) => TestUi(),
     },
   ));
 }
