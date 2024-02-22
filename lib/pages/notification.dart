@@ -7,12 +7,8 @@ class Notifi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double figmaScreenWidth = 428.0;
-    double figmaScreenHeight = 926.0;
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-    double ws = screenWidth / figmaScreenWidth;
-    double hs = screenHeight / figmaScreenHeight;
+    double ws = MediaQuery.of(context).size.width / 428;
+    double hs = MediaQuery.of(context).size.height / 926;
     return Scaffold(
       body: Center(
         child: Column(
@@ -24,27 +20,27 @@ class Notifi extends StatelessWidget {
             height: 215.7*hs,),
           ),
           SizedBox(height: 90*hs,),
-          const Text('Don’t miss out!',
+          Text('Don’t miss out!',
                       style: TextStyle(
                           color: Color(0xFF2E2E2E),
                           fontWeight:
                               FontWeight.bold, // FontWeight.bold is also valid
-                          fontSize: 32,
+                          fontSize: 32*((ws+hs)/2),
                         )),
                     SizedBox(height: 11 * hs),
-                    const Text(
+                     Text(
                       textAlign: TextAlign.center,
                       'Get push notifications for carbon advice & quests!',
                       style: TextStyle(
                         color: Color(0xFF2E2E2E),
-                        fontSize: 18,
+                        fontSize: 18*((ws+hs)/2),
                         fontWeight: FontWeight.normal,
                       ),
                     ),
                     SizedBox(height: 120*hs,),
                     CustomButtonlink(buttonText: 'Enable Push Notifications', path: WelcomePage()),
                     SizedBox(height: 10,),
-                    TextButton(onPressed: null, child: Text('Enter Now'))
+                    TextButton(onPressed: () => Navigator.pushNamed(context, '/welcome'), child: Text('Enter Now'))
                     
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_m/componests/my_text_field.dart';
+import 'package:new_m/pages/create_profile.dart';
 import 'package:new_m/pages/welcome.dart';
 class Success extends StatelessWidget {
   const Success({super.key});
@@ -23,25 +24,25 @@ class Success extends StatelessWidget {
             height: 215.7*hs,),
           ),
           SizedBox(height: 120*hs,),
-          const Text('Registration Done!',
+           Text('Registration Done!',
                       style: TextStyle(
                           color: Color(0xFF2E2E2E),
                           fontWeight:
                               FontWeight.bold, // FontWeight.bold is also valid
-                          fontSize: 32,
+                          fontSize: 32*((ws+hs)/2),
                         )),
                     SizedBox(height: 11 * hs),
-                    const Text(
+                     Text(
                       textAlign: TextAlign.center,
                       'All your content in one place, it’s \ntime to start exploring.',
                       style: TextStyle(
                         color: Color(0xFF2E2E2E),
-                        fontSize: 18,
+                        fontSize: 18*((ws+hs)/2),
                         fontWeight: FontWeight.normal,
                       ),
                     ),
                     SizedBox(height: 180*hs,),
-                    CustomButtonlink(buttonText: 'Get started', path: WelcomePage())
+                    CustomButtonlink(buttonText: 'Get started', path: ProfilePage())
                     
           ],
         ),

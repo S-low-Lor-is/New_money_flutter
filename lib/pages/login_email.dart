@@ -25,7 +25,7 @@ class LoginEmail extends StatelessWidget {
           // ),
           child: Padding(
             padding: EdgeInsets.only(
-                top: 198 * hs, left: 40 * ws, right: 40 * ws, bottom: 0 * hs),
+                top: 190 * hs, left: 40 * ws, right: 40 * ws, bottom: 0 * hs),
             child: Container(
               //  decoration: BoxDecoration(
               //         border: Border.all(
@@ -39,19 +39,19 @@ class LoginEmail extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   
                   children: <Widget>[
-                    const Text('Sign in',
+                     Text('Sign in',
                         style: TextStyle(
                           color: Color(0xFF2E2E2E),
                           fontWeight:
                               FontWeight.w900, // FontWeight.bold is also valid
-                          fontSize: 50,
+                          fontSize: 50*((ws+hs)/2),
                         )),
                     SizedBox(height: 11 * hs),
-                    const Text(
+                     Text(
                       'Welcome back!',
                       style: TextStyle(
                         color: Color(0xFF2E2E2E),
-                        fontSize: 18,
+                        fontSize: 18*((ws+hs)/2),
                         fontWeight: FontWeight
                             .w500, // You can adjust the fontWeight as needed
                       ),
@@ -65,7 +65,7 @@ class LoginEmail extends StatelessWidget {
                       color: Color.fromRGBO(149, 228, 168, 100)),
                     ),
                     SizedBox(
-                      height: 17 * hs,
+                      height: 20 * hs,
                     ),
                     MyTextField(
                       controller: passwordcontroller,
@@ -90,12 +90,12 @@ class LoginEmail extends StatelessWidget {
                         ),
                         
                       
-                        child:  const Text(
+                        child:   Text(
                           'Forgot password?',
                           style: TextStyle(
                             color: Color(0xFF2E2E2E),
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 16*((ws+hs)/2),
                             fontFamily: 'ReadexPro',
                           ),
                         ),
@@ -103,7 +103,7 @@ class LoginEmail extends StatelessWidget {
                     ),
                     SizedBox(height: hs*20,),
                     CustomButton(buttonText:'Log in'),
-                    SizedBox(height:hs*210),
+                    SizedBox(height:hs*190),
         
                     Align(
                       alignment: Alignment.bottomCenter, 

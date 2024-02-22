@@ -30,7 +30,7 @@ class ResetPassword extends StatelessWidget {
                       color: Color(0xFF2E2E2E),
                       fontWeight:
                           FontWeight.bold,
-                      fontSize: 50,
+                      fontSize: 50*((ws+hs)/2),
                      
                     ),),
               SizedBox(height: 0),
@@ -40,7 +40,7 @@ class ResetPassword extends StatelessWidget {
                   style: TextStyle(
                     height: 0.8,
                     color: Color(0xFF2E2E2E),
-                    fontSize: 50,
+                    fontSize: 50*((ws+hs)/2),
                     fontWeight: FontWeight.bold,
                     
                   ),

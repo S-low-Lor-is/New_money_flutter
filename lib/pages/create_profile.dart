@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_m/componests/my_text_field.dart';
+import 'package:new_m/pages/profile_created.dart';
 import 'package:new_m/pages/welcome.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -47,7 +48,7 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               CircleAvatar(
                 backgroundImage: _image != null ? FileImage(_image!) : AssetImage('assets/sheep.png') as ImageProvider,
-                radius: 90.0,
+                radius: 90.0*((ws+hs)/2),
                 backgroundColor: Color.fromARGB(100, 196, 196, 196),
               ),
               // Button to upload photo
@@ -77,7 +78,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               color: Color(0xFF2E2E2E),
                               fontWeight:
                                   FontWeight.bold, // FontWeight.bold is also valid
-                              fontSize: 32,
+                              fontSize: 32*((ws+hs)/2),
                             )),
                   SizedBox(height: 30*hs,),
                   Container(
@@ -119,7 +120,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                   SizedBox(height: 60.0 * hs),
-                  CustomButtonlink(buttonText: 'Next', path: WelcomePage()),
+                  CustomButtonlink(buttonText: 'Next', path: ProfileCreated()),
                 ],
               ),
             ),

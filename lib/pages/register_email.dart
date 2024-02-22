@@ -25,19 +25,19 @@ class RegisterEmail extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               
               children: <Widget>[
-                const Text('Register',
+                 Text('Register',
                     style: TextStyle(
                       color: Color(0xFF2E2E2E),
                       fontWeight:
                           FontWeight.w900, // FontWeight.bold is also valid
-                      fontSize: 50,
+                      fontSize: 50*((ws+hs)/2),
                     )),
                 SizedBox(height: 11 * hs),
-                const Text(
+                 Text(
                   'Welcome!',
                   style: TextStyle(
                     color: Color(0xFF2E2E2E),
-                    fontSize: 18,
+                    fontSize: 18*((ws+hs)/2),
                     fontWeight: FontWeight
                         .w500, // You can adjust the fontWeight as needed
                   ),
