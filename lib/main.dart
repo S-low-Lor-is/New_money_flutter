@@ -24,7 +24,7 @@ void main() {
     ),
   );
   runApp(MaterialApp(
-    initialRoute: '/test',
+    initialRoute: '/index',
     routes: {
       '/': (context) => WelcomePage(),
       '/sign_in_option': (context) => MyHomePage(),

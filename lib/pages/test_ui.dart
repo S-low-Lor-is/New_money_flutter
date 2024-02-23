@@ -19,7 +19,6 @@ class _TestUiState extends State<TestUi> {
     FlSpot(6, 4),
     
   ];
-
   // A boolean value to control the visibility of the dot
   bool _showDot = true;
 
@@ -103,6 +102,7 @@ class _TestUiState extends State<TestUi> {
                 ),
               ),
             ),
+            
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
